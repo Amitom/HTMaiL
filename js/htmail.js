@@ -212,6 +212,8 @@ $(document).ready(function(){
 		e.preventDefault();
         $('form[action=setcell]').slideUp(500);
 		generateImageTable();
+        $('#generatehtml').val('');
+        $('form[action=generateHTML]').slideDown(500);
 		return false;
 	});
     // ==========================
@@ -276,6 +278,21 @@ $(document).ready(function(){
             $t.parents('#imageswrapper').removeClass('active')
             $('form[action=setcell]').slideUp(500);
         }
+        // ==========================
+        return false;
+    });
+    // ==========================
+    // Set/Modify cell
+    // ==========================
+    var generateHTML = function(){
+        var $table = $('.tablewrapper').clone();
+        $table.find('.norender,.norendering').remove();
+        return $table.html().trim();
+    }
+    $('form[action=generateHTML]').on('submit',function(e){
+        e.preventDefault();
+        // ==========================
+        $('#generatehtml').val(generateHTML());
         // ==========================
         return false;
     });

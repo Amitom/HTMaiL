@@ -86,6 +86,9 @@ form[action=setcell]{
 form[action=cut]{
   display:none;
 }
+form[action=generateHTML]{
+  display:none;
+}
 
 .tablewrapper{
 	max-width:100%;

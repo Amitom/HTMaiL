@@ -29,12 +29,10 @@ textarea.form-control {
       #canvaswrapper #ruleswrapper .rule:hover {
         background: #ff0; }
         #canvaswrapper #ruleswrapper .rule:hover.rh {
-          border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-          border-top: 1px solid rgba(255, 255, 255, 0.4);
+          padding: 1px 0;
           margin-top: -1px; }
         #canvaswrapper #ruleswrapper .rule:hover.rv {
-          border-left: 1px solid rgba(255, 255, 255, 0.4);
-          border-right: 1px solid rgba(255, 255, 255, 0.4);
+          padding: 0 1px;
           margin-left: -1px; }
       #canvaswrapper #ruleswrapper .rule.editable, #canvaswrapper #ruleswrapper .rule.editable:hover {
         background: #f00; }
@@ -71,6 +69,9 @@ form[action=setcell] {
   display: none; }
 
 form[action=cut] {
+  display: none; }
+
+form[action=generateHTML] {
   display: none; }
 
 .tablewrapper {
