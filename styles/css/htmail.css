@@ -1,0 +1,93 @@
+textarea.form-control {
+  max-width: 100%;
+  min-height: 6em;
+  min-width: 100%; }
+
+.alert:empty {
+  display: none; }
+
+#canvaswrapper {
+  border: 1px solid #0ff;
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative; }
+  #canvaswrapper canvas {
+    display: block;
+    max-width: 100%; }
+  #canvaswrapper #ruleswrapper {
+    bottom: 0;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0; }
+    #canvaswrapper #ruleswrapper .rule {
+      background: #0ff;
+      position: absolute; }
+      #canvaswrapper #ruleswrapper .rule:hover {
+        background: #ff0; }
+        #canvaswrapper #ruleswrapper .rule:hover.rh {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+          border-top: 1px solid rgba(255, 255, 255, 0.4);
+          margin-top: -1px; }
+        #canvaswrapper #ruleswrapper .rule:hover.rv {
+          border-left: 1px solid rgba(255, 255, 255, 0.4);
+          border-right: 1px solid rgba(255, 255, 255, 0.4);
+          margin-left: -1px; }
+      #canvaswrapper #ruleswrapper .rule.editable, #canvaswrapper #ruleswrapper .rule.editable:hover {
+        background: #f00; }
+      #canvaswrapper #ruleswrapper .rule.rh {
+        cursor: n-resize;
+        left: 0;
+        height: 1px;
+        right: 0;
+        top: 50%; }
+      #canvaswrapper #ruleswrapper .rule.rv {
+        bottom: 0;
+        cursor: e-resize;
+        left: 50%;
+        top: 0;
+        width: 1px; }
+    #canvaswrapper #ruleswrapper.onmove {
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+      cursor: -ms-grabbing;
+      cursor: grabbing; }
+      #canvaswrapper #ruleswrapper.onmove .rh, #canvaswrapper #ruleswrapper.onmove .rv {
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+        cursor: -ms-grabbing;
+        cursor: grabbing; }
+
+form[action=addrule] {
+  display: none; }
+
+form[action=setrule] {
+  display: none; }
+
+form[action=setcell] {
+  display: none; }
+
+form[action=cut] {
+  display: none; }
+
+.tablewrapper {
+  max-width: 100%;
+  overflow: auto; }
+
+#imageswrapper {
+  border-collapse: collapse;
+  display: none;
+  margin: 0 auto; }
+  #imageswrapper.active td {
+    opacity: 0.7; }
+  #imageswrapper td {
+    border: 1px solid #0ff; }
+    #imageswrapper td.currentcell {
+      opacity: 1; }
+  #imageswrapper img, #imageswrapper canvas {
+    display: block; }
+  #imageswrapper .norendering {
+    display: none; }

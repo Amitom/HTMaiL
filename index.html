@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTMail - Image cutter for emailling campaign</title>
+	<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/css/htmail.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<header class="page-header">
+		  <h1>HTMaiL</h1>
+		</header>
+		<section class="row">
+		  <div class="col-md-3">
+		  	<h2><span class="glyphicon glyphicon-cog"></span> Template settings :</h2>
+		  	<form action="upload" role="form" class="well">
+              <div class="alert"></div>
+			  <div class="form-group">
+			    <label for="templatefile">File input</label>
+			    <p class="help-block">Select the image template</p>
+			    <input type="file" id="templatefile">
+			  </div>
+			  <button type="submit" class="btn btn-default">Load</button>
+			</form>
+		  	<!--<form action="download" role="form" class="well">
+			  <div class="form-group">
+			    <label for="uptemplate">Download your template</label>
+			    <p class="help-block">If it's okay for you, click "Download" !</p>
+			  </div>
+			  <button type="submit" id="uptemplate" class="btn btn-default">Download</button>
+			</form>-->
+		  </div>
+		  <div class="col-md-6">
+		  	<h2><span class="glyphicon glyphicon-eye-open"></span> Render</h2>
+		  	<div class="well" id="drawingzone">
+		  		<div class="alert"></div>
+		  		<div id="canvaswrapper">
+		  			<ul id="ruleswrapper">
+		  			</ul>
+		  			<canvas id="render"></canvas>
+		  		</div>
+		  		<div class="tablewrapper">
+			  		<table id="imageswrapper">
+					  	<caption class="norender">Rendering Overview - Click a cell to change its properties</caption>
+					  	<tbody></tbody>
+				  </table>
+				</div>
+		  	</div>
+		  </div>
+		  <div class="col-md-3">
+		  	<h2><span class="glyphicon glyphicon-wrench"></span> Properties :</h2>
+		  	<form action="addrule" role="form" class="well" autocomplete="off">
+			  <div class="form-group">
+			    <label for="uptemplate">Create a rule</label>
+			    <p class="help-block">Set parameters and "Add" the rule.</p>
+  				<div class="btn-group" data-toggle="buttons">
+    				<label class="btn btn-default active">
+    					<input type="radio" name="side" value="h" id="sideh" checked="checked" >Horizontal
+    				</label>
+    				<label class="btn btn-default">
+    					<input type="radio" name="side" value="v" id="sidev">Vertical
+    				</label>
+				</div>         
+                <button type="submit" id="uptemplate" class="btn btn-primary">Add</button>  
+			  </div>                 
+              <div class="form-group">
+                <label for="removerule">Remove all rules :</label>
+              </div>
+              <button type="button" id="removeallrules" class="btn btn-danger">Delete all</button>
+			</form>
+			<form action="setrule" role="form" class="well">
+              <div class="alert alert-info alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <span class="glyphicon glyphicon-pushpin"></span>
+                  You can also grab the rules and set its position with your mouse
+              </div>
+			  <div class="form-group">
+			    <label for="changeposition">Set position of the current rule (in pixel) :</label>
+			    <input type="text" class="form-control" id="changeposition" placeholder="ex : 126">
+              </div>
+              <div class="form-group">
+                <label for="removerule">Remove the rule :</label>
+                <button type="submit" id="removerule" class="btn btn-danger">Delete</button>
+			  </div>			  
+			</form>
+            <form action="cut" role="form" class="well">
+              <div class="form-group">
+                <label for="uptemplate">Cut your image</label>
+              </div>
+              <button type="submit" id="uptemplate" class="btn btn-default">Generate images</button>              
+            </form>
+            <form action="setcell" role="form" class="well">
+                <div class="form-group">
+                    <label for="uptemplate">Set a cell : </label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsCell" id="optionsCell0" value="0" checked>
+                            Just an image
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsCell" id="optionsCell1" value="1">
+                            Add a link :
+                        </label>
+                        <label>
+                            <input placeholder="ex: http://url.com" type="url" id="href">                                    
+                        </label>                        
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsCell" id="optionsCell2" value="2">
+                            Replace image by custom HTML :
+                        </label>                                
+                        <label>
+                            <textarea class="form-control" id="customhtml">                                      
+                            </textarea>                                   
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" id="uptemplate" class="btn btn-default">Apply modification</button>               
+            </form>
+		  </div>
+		</section>
+	</div>
+	<!-- Scripts -->
+	<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/htmail.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

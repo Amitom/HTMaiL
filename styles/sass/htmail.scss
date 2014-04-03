@@ -1,0 +1,115 @@
+// Reset
+textarea.form-control{
+  max-width: 100%;
+  min-height: 6em;
+  min-width: 100%;
+}
+.alert:empty{
+  display: none;
+}
+// Application
+#canvaswrapper{	
+  border:1px solid #0ff;
+	margin:0 auto;
+	max-width:100%;
+	position: relative;
+	canvas{
+		display: block;
+		max-width:100%;
+	}
+	#ruleswrapper{
+		bottom:0;
+		left:0;
+		list-style:none;
+		margin:0;
+		padding:0;
+		position: absolute;
+		right:0;
+		top:0;
+		.rule{
+			background: #0ff;
+			position:absolute;
+			&:hover{
+				background:#ff0;
+        &.rh{
+          padding:1px 0;
+          margin-top:-1px; 
+        }
+        &.rv{
+          padding:0 1px;
+          margin-left:-1px; 
+        }
+			}
+			&.editable,
+			&.editable:hover{
+				background:#f00;
+			}
+			&.rh{
+				cursor: n-resize;
+				left:0;
+				height:1px;
+				right:0;	
+				top:50%;	
+			}
+			&.rv{
+				bottom:0;
+				cursor: e-resize;
+				left:50%;
+				top:0;
+				width: 1px;
+			}
+		}
+		&.onmove{
+			cursor: -moz-grabbing;
+			cursor: -webkit-grabbing;
+			cursor: -ms-grabbing;
+			cursor: grabbing;
+			.rh,.rv{
+				cursor: -moz-grabbing;
+				cursor: -webkit-grabbing;
+				cursor: -ms-grabbing;
+				cursor: grabbing;
+			}
+		}
+	}
+}
+
+form[action=addrule]{
+	display:none;
+}
+form[action=setrule]{
+  display:none;
+}
+form[action=setcell]{
+  display:none;
+}
+form[action=cut]{
+  display:none;
+}
+
+.tablewrapper{
+	max-width:100%;
+	overflow: auto;
+}
+#imageswrapper{
+	border-collapse: collapse;
+	display: none;
+	margin:0 auto;
+  &.active{
+    td{
+      opacity: 0.7;
+    }
+  }
+	td{
+		border:1px solid #0ff;
+    &.currentcell{
+      opacity: 1;
+    }
+	}
+	img,canvas{
+		display: block;
+	}
+  .norendering{
+    display: none;
+  }
+}
